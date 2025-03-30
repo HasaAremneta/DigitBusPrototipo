@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2A3547;
+    color: #FBFFF8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.logo{
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+    height: auto;
+}
+.container {
+    background-color: #FBFFF8;
+    color: #2A3547;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 107%;
+    padding: 15px;
+    background-color: #1A6DFF;
+    color: #FBFFF8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #154DBA;
+}
+.extra-links {
+    text-align: center;
+    margin-top: 15px;
+}
+.extra-links a {
+    color: #FBFFF8;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.extra-links a:hover {
+    text-decoration: underline;
+}
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 400px; /* Limita el ancho máximo */
+        padding: 15px;
+    }
+
+    .logo {
+        max-width: 120px; /* Reduce el tamaño del logo en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px; /* Reduce el padding en campos de texto */
+    }
+
+    button {
+        padding: 8px; /* Reduce el tamaño del botón */
+    }
+}

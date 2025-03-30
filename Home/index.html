@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de la Aplicación</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="main-container">    
+        <!-- Botón de menú (tres líneas blancas) -->
+        <div class="menu-button" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        
+        <!-- Mensaje de bienvenida -->
+        <div class="welcome-message">
+            <h1>Bienvenido a</h1>
+        </div>
+
+        <!-- Información del usuario en la parte superior derecha -->
+        <div class="user-info" onclick="toggleUserMenu()">
+            <img src="../img/SinFoto.jpg" alt="Foto del usuario" class="user-photo">
+            <div class="user-details">
+                <p class="user-name">Nombre del Usuario</p>
+                <p class="date-time" id="date-time"></p>
+            </div>
+        </div>
+
+        <!-- Botón de cerrar sesión -->
+        <div class="user-menu" id="user-menu">
+            <ul>
+                <li><a href="../Login/index.html" onclick="logout()">Cerrar sesión</a></li>
+            </ul>
+        </div>
+
+
+        <!-- Imagen grande en el centro -->
+        <img src="../img/LOGO.png" alt="Imagen principal" class="main-image">
+
+        <!-- Menú lateral -->
+        <div class="side-menu" id="side-menu">
+            <ul>
+                <li><a href="#">Solicitar</a></li>
+                <li><a href="#">Recargar</a></li>
+                <li><a href="#">Renovar</a></li>
+                <li><a href="#">Pagar</a></li>
+                <li><a href="#">Nuestro juego</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="menuApp.js"></script>
+</body>
+</html>

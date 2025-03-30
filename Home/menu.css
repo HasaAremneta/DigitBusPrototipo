@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2A3547; /* Fondo oscuro */
+    color: #FBFFF8; /* Texto claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-message {
+    position: absolute;
+    top: 30%; /* Ajustar la posición más cerca del logo */
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center; /* Centrar el texto */
+    color: #FBFFF8; /* Texto claro */
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    z-index: 500; /* Asegura que esté por encima de otros elementos */
+    transform: translateY(-50%); /* Centrar verticalmente respecto al top */
+}  
+
+.main-image {
+    max-width: 60%; /* Reducir el tamaño máximo al 60% del contenedor */
+    max-height: 60%; /* Reducir la altura máxima */
+    object-fit: cover;
+    border-radius: 15px; /* Bordes más redondeados para un diseño minimalista */
+    margin: 20px 0; /* Agregar un margen para separar la imagen del resto */
+}
+
+/* Botón de menú */
+.menu-button {
+    position: absolute;
+    top: 20px; /* Mover a la parte superior */
+    left: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000; /* Asegura que el botón esté por encima del menú */
+}
+
+.menu-button .line {
+    width: 30px;
+    height: 4px;
+    background-color: #FBFFF8; /* Líneas blancas */
+    border-radius: 2px;
+}
+
+/* Información del usuario */
+.user-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para cambios */
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FBFFF8; /* Borde blanco */
+}
+
+.user-details {
+    text-align: left;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.date-time {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #ccc; /* Texto gris claro */
+}
+
+/* Menú desplegable del usuario */
+.user-menu {
+    position: absolute;
+    top: 80px; /* Debajo de la información del usuario */
+    right: 20px;
+    background-color: #1A6DFF; /* Fondo azul */
+    color: #FBFFF8;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+
+.user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.user-menu ul li {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.user-menu ul li a {
+    color: #FBFFF8;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.user-menu ul li a:hover {
+    text-decoration: underline;
+    background-color: #154DBA; /* Azul más oscuro */
+}
+
+/* Menú lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Oculto inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: #1A6DFF; /* Fondo azul */
+    color: #FBFFF8;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Animación suave */
+    padding: 20px;
+    z-index: 999; /* Asegura que el menú esté por debajo del botón */
+    visibility: hidden; /* Oculta el menú inicialmente */
+}
+
+.side-menu.open {
+    left: 0; /* Muestra el menú */
+    visibility: visible; /* Hace visible el menú */
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 70px 0 0 0; /* Espacio superior para el menú */
+}
+
+.side-menu ul li {
+    margin-bottom: 25px; /* Espacio entre módulos */
+    text-align: left;
+}
+.side-menu ul li:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último módulo */
+}
+
+.side-menu ul li a {
+    color: #FBFFF8;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.side-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+/*responsive*/
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .welcome-message {
+        top: 35%; /* Ajustar la posición para pantallas más pequeñas */
+        font-size: 1.2rem; /* Reducir el tamaño del texto */
+    }
+    .user-info {
+        top: 10px; /* Reducir el espacio superior */
+        right: 10px; /* Reducir el espacio derecho */
+        padding: 5px; /* Reducir el padding */
+        gap: 5px; /* Reducir el espacio entre elementos */
+    }
+
+    .user-photo {
+        width: 40px; /* Reducir el tamaño de la foto */
+        height: 40px;
+    }
+
+    .user-name {
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+
+    .date-time {
+        font-size: 0.7rem; /* Reducir el tamaño del texto */
+    }
+}
+
+/* Media query para pantallas muy pequeñas (como móviles) */
+@media (max-width: 480px) {
+    .welcome-message {
+        top: 40%; /* Ajustar la posición para móviles */
+        font-size: 1rem; /* Reducir aún más el tamaño del texto */
+    }
+    .user-info {
+        flex-direction: column; /* Cambiar a diseño vertical */
+        align-items: center; /* Centrar los elementos */
+        padding: 5px;
+    }
+
+    .user-details {
+        text-align: center; /* Centrar el texto */
+    }
+
+    .user-photo {
+        width: 35px; /* Reducir aún más el tamaño de la foto */
+        height: 35px;
+    }
+
+    .user-name {
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
+    }
+
+    .date-time {
+        font-size: 0.6rem; /* Reducir el tamaño del texto */
+    }
+}
